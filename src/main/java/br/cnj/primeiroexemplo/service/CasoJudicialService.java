@@ -1,7 +1,7 @@
 package br.cnj.primeiroexemplo.service;
 
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -10,8 +10,7 @@ import org.springframework.stereotype.Service;
 
 import br.cnj.primeiroexemplo.repository.CasoJudicialRepository;
 import br.cnj.primeiroexemplo.model.CasoJudicial;
-import br.cnj.primeiroexemplo.util.CustoJudicial;
-import br.cnj.primeiroexemplo.util.TaxaJudicial;
+
 
 @Service
 public class CasoJudicialService {
@@ -20,7 +19,7 @@ public class CasoJudicialService {
     //@Autowired
     //private final CasoJudicialRepository repository;
 
-
+    @Autowired
     public CasoJudicialService(CasoJudicialRepository repository){
         //this.repository = repository;
 
@@ -31,7 +30,7 @@ public class CasoJudicialService {
     }
 
     public List<CasoJudicial> pegarTodosOsCasos(){
-        return casos;
+        return new ArrayList<>(casos);
     }
 
     public boolean existe(CasoJudicial novoCaso){
